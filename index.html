@@ -3,7 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script defer src="index.js"></script>
     <title>Weather_App</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <div class="content_wrapper">
+        <h1>WeatherCast</h1>
+
+        <form>
+          <input type="text" required placeholder="Enter a country" />
+          <button type="submit" class="btn">
+            <img src="images/search.png" alt="" />
+          </button>
+        </form>
+
+        <div>
+          <img
+            class="weather_image"
+            src="images/clear.png"
+            alt="weather_condition"
+          />
+        </div>
+        <div class="contents">
+          <div class="weather_info">1</div>
+          <div class="weather_info">2</div>
+          <div class="weather_info">3</div>
+          <div class="weather_info">4</div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
