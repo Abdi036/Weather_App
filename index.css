@@ -68,5 +68,12 @@ form input {
 }
 .weather_info {
   border: 1px solid red;
-  padding: 3rem;
+  height: auto;
+  padding: 1rem;
+}
+.img {
+  width: 40px;
+}
+.value {
+  padding: 10px;
 }
