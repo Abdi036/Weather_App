@@ -3,6 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: "Averia Libre", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #ebebebd6;
+}
 
 .container {
   width: 100%;
@@ -67,7 +73,9 @@ form input {
   gap: 10px 50px;
 }
 .weather_info {
-  border: 1px solid red;
+  border: 1px solid #0e0d0dc0;
+  border-radius: 15px;
+  color: #fff;
   height: auto;
   padding: 1rem;
 }
@@ -79,4 +87,30 @@ form input {
 }
 .info_wrapper {
   display: none;
+}
+
+/* Responsiveness */
+
+/* Mobile Phones */
+@media screen and (max-width: 600px) {
+  body {
+    overflow: hidden;
+  }
+
+  .content_wrapper {
+    width: 80%;
+    scale: 0.9;
+    padding: 1rem 2rem;
+  }
+  .btn img {
+    display: block;
+    border-radius: 30px;
+  }
+}
+/* Tablets */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .content_wrapper {
+    width: 60%;
+    scale: 0.9;
+  }
 }

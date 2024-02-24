@@ -7,7 +7,7 @@ const windSpeed = document.querySelector(".speed");
 const Humidity = document.querySelector(".humidity");
 const cityName = document.querySelector(".city_name");
 const weatherImage = document.querySelector(".weather_image");
-// const citn = "new york";
+
 // creating async await function
 const API_key = "daeea96cab56a856c044a0803a6c59fa";
 
@@ -15,13 +15,18 @@ async function weatherCheck(city) {
   const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}&units=metric`;
   const res = await fetch(URL);
   const data = await res.json();
+
+  if (data.cod === "404") {
+    alert("Enter a correct city name!");
+    return;
+  }
+
   cityName.textContent = data.name;
   Temprature.textContent = data.main.temp + " °C";
   windSpeed.textContent = data.wind.speed + " km/hr";
   feelsLike.textContent = data.main.feels_like + " °C";
   Humidity.textContent = data.main.humidity + "%";
 
-  console.log(data);
   if (data.weather[0].main == "Clouds") {
     weatherImage.src = "images/clouds.png";
   } else if (data.weather[0].main == "Clear") {
