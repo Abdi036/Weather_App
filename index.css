@@ -77,3 +77,6 @@ form input {
 .value {
   padding: 10px;
 }
+.info_wrapper {
+  display: none;
+}

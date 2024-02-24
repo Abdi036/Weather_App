@@ -1,5 +1,6 @@
 const searchInput = document.querySelector(".inputPlace");
 const searchBtn = document.querySelector(".btn");
+const infoWrapper = document.querySelector(".info_wrapper");
 const Temprature = document.querySelector(".temprature");
 const feelsLike = document.querySelector(".feelsLike");
 const windSpeed = document.querySelector(".speed");
@@ -34,6 +35,7 @@ async function weatherCheck(city) {
   } else if (data.weather[0].main == "Snow") {
     weatherImage.src = "images/snow.png";
   }
+  infoWrapper.style.display = "block";
 }
 searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
