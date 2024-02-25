@@ -19,31 +19,31 @@ async function weatherCheck(city) {
   if (data.cod === "404") {
     alert("Enter a correct city name!");
     return;
-  }
+  } else {
+    cityName.textContent = data.name;
+    Temprature.textContent = data.main.temp + " °C";
+    windSpeed.textContent = data.wind.speed + " km/hr";
+    feelsLike.textContent = data.main.feels_like + " °C";
+    Humidity.textContent = data.main.humidity + "%";
 
-  cityName.textContent = data.name;
-  Temprature.textContent = data.main.temp + " °C";
-  windSpeed.textContent = data.wind.speed + " km/hr";
-  feelsLike.textContent = data.main.feels_like + " °C";
-  Humidity.textContent = data.main.humidity + "%";
-
-  if (data.weather[0].main == "Clouds") {
-    weatherImage.src = "images/clouds.png";
-  } else if (data.weather[0].main == "Clear") {
-    weatherImage.src = "images/clear.png";
-  } else if (data.weather[0].main == "Drizzle") {
-    weatherImage.src = "images/drizzle.png";
-  } else if (data.weather[0].main == "Mist") {
-    weatherImage.src = "images/mist.png";
-  } else if (data.weather[0].main == "Rain") {
-    weatherImage.src = "images/rain.png";
-  } else if (data.weather[0].main == "Snow") {
-    weatherImage.src = "images/snow.png";
+    if (data.weather[0].main == "Clouds") {
+      weatherImage.src = "images/clouds.png";
+    } else if (data.weather[0].main == "Clear") {
+      weatherImage.src = "images/clear.png";
+    } else if (data.weather[0].main == "Drizzle") {
+      weatherImage.src = "images/drizzle.png";
+    } else if (data.weather[0].main == "Mist") {
+      weatherImage.src = "images/mist.png";
+    } else if (data.weather[0].main == "Rain") {
+      weatherImage.src = "images/rain.png";
+    } else if (data.weather[0].main == "Snow") {
+      weatherImage.src = "images/snow.png";
+    }
+    infoWrapper.style.display = "block";
   }
-  infoWrapper.style.display = "block";
+  searchBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    weatherCheck(searchInput.value);
+    searchInput.value = "";
+  });
 }
-searchBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  weatherCheck(searchInput.value);
-  searchInput.value = "";
-});
